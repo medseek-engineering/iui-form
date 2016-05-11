@@ -1,7 +1,7 @@
 {
-  "name": "iui-basic",
+  "name": "iui-form",
   "version": "1.0.0",
-  "description": "Angular directive & styles",
+  "description": "Angular form Fields and other helper directives.",
   "main": "./lib/index.js",
   "private": false,
   "scripts": {
@@ -13,12 +13,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medseek-engineering/iui-basic.git"
+    "url": "https://github.com/medseek-engineering/iui-form.git"
   },
   "author": "Influence Health, Inc.",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/medseek-engineering/iui-basic/issues"
+    "url": "https://github.com/medseek-engineering/iui-form/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -64,8 +64,8 @@
       "iui-general"
     ],
     "createTemplates": {
-      "moduleName": "iui.basicTemplates",
-      "prefix": "/$iui-basic/",
+      "moduleName": "iui.formTemplates",
+      "prefix": "/$iui-form/",
       "templateFile": "templates.js"
     },
     "combineFiles": {

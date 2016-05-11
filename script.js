@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('app', ['ui.bootstrap','iui.basic'])
+    .module('app', ['ui.bootstrap','iui.form'])
     .constant('_', window._)
     .controller('TestController', TestController);
 

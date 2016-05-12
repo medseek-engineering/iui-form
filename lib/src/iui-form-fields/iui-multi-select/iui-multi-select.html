@@ -1,0 +1,52 @@
+<div class="df-multi-select">
+  <div class="column-holder">
+    <div class="col-filter">
+      <label class="sr-only" for="searchEntity">Filter</label>
+      <input type="search" name="searchEntity"  id="searchEntity" placeholder="Filter" ng-model="search" class="form-control" maxlength="50" ng-change="clearFocus()">
+      <span ng-show="recordsCount">No Records found</span>
+    </div>
+  </div>  
+  <div class="column-holder">
+    <div class="col-available">
+      <label class="control-label" for="{{field.name}}_multiSelectAvailable">{{ availableLabel }}
+      ({{ collection.length-selectedItems.length || 0 }})</label>
+    </div>
+    <div class="col-buttons"></div>
+    <div class="col-selected">
+      <label class="control-label" for="{{field.name}}_multiSelectSelected">{{ selectedLabel }}
+      ({{ selectedItems.length || 0 }})</label>
+    </div>
+  </div>
+  <div class="column-holder">
+    <div class="col-available">
+      <select id="{{field.name}}_multiSelectAvailable" class="form-control" ng-model="focus.available" multiple
+      ng-options="item.__displayValue for item in collection | filter: { __selected: false }| filter: search"></select>
+    </div>
+    <div class="col-buttons">
+      <button class="btn-mover pager-button" ng-click="addAll()" title="Add all"
+      ng-disabled="((collection | filter:search).length - (selectedItems | filter:search).length) === 0">
+        <i class="glyphicon glyphicon-forward"></i>
+        <span class="sr-only">Add all {{ availableLabel }} items</span>
+      </button>
+      <button class="btn-mover pager-button" ng-click="add()" title="Add selected"
+      ng-disabled="!focus.available.length">
+        <i class="glyphicon glyphicon-play"></i>
+        <span class="sr-only">Add selected {{ availableLabel }} items</span>
+      </button>
+      <button class="btn-mover pager-button" ng-click="remove()" title="Remove selected"
+      ng-disabled="!focus.selected.length">
+        <i class="pager-back-img"></i>
+        <span class="sr-only">Remove selected {{ selectedLabel }} items</span>
+      </button>
+      <button class="btn-mover pager-button" ng-click="removeAll()" title="Remove all"
+      ng-disabled="(selectedItems | filter:search).length === 0">
+        <i class="glyphicon glyphicon-backward"></i>
+        <span class="sr-only">Remove all {{ selectedLabel }} items</span>
+      </button>
+    </div>
+    <div class="col-selected">
+      <select id="{{field.name}}_multiSelectSelected" class="form-control" ng-model="focus.selected" multiple ng-options="item.__displayValue for item in collection | filter: { __selected: true } | filter: search">
+      </select>
+    </div>
+  </div>
+</div>

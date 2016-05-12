@@ -1,0 +1,11 @@
+<div class="mf-checkbox">
+	<input
+		class="custom-checkbox"
+		id="{{field.id}}"
+		name="{{field.name}}"
+		type="checkbox"
+		ng-model="selected"
+		ng-disabled="{{field.valueReadOnly}}"
+	> 
+	<label for="{{field.id}}" ng-bind="field.label"></label>
+</div>

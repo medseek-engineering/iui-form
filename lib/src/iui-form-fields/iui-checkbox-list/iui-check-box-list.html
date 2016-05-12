@@ -1,0 +1,17 @@
+<ul class="list-unstyled">
+  <li ng-repeat="(key, value) in field.listItems"
+    data-style="button">
+    <div class="checkbox">
+      <input
+          class="custom-checkbox"
+          id="{{field.id + '_' + $index}}"
+          name="{{field.name}}"
+          type="checkbox"
+          ng-checked="isChecked(key)"
+          ng-click="updateModel({key:key,value:value})">
+      <label for="{{field.id + '_' + $index}}">
+        {{value}}
+      </label>
+    </div>
+  </li>
+</ul>

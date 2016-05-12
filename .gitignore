@@ -1,4 +1,26 @@
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+*.orig
+*.dmp
+*.tmp
 
-*.scssc
+pids
+logs
+results
 
-node_modules/*
+node_modules
+coverage
+karma_html
+.sass-cache
+.DS_Store
+
+config/*.local.*
+
+*.map
+newrelic.js

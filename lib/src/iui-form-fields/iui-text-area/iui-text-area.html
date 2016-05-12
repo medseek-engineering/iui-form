@@ -1,0 +1,4 @@
+﻿<div>
+  <textarea id="{{field.id}}" name="{{field.name}}" class="form-control" ng-model="value" ng-change="onChange()" rows="{{field.rows}}" cols="{{field.cols}}" maxlength="{{field.totalCharacter}}"></textarea><br>
+  <span ng-if="field.filters.CharacterCountdown">Character Remaining: {{field.totalCharacter-value.length}}</span>
+</div>

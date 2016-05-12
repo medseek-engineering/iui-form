@@ -1,0 +1,6 @@
+<div class="fieldName-{{field.name}}">
+  <select ng-show="!field.filters.ReadOnly" id="{{field.id}}" name="{{field.name}}" class="form-control" ng-options="{{isArray ? 'k as v for (k, v) in field.listItems' : 'item.name for item in field.listItems | orderBy:\'name\'' }} " ng-model="model" ng-change="updateModel()">
+    <option value="" ng-show="blankitem"></option>
+  </select>
+  <input type="text" class="form-control" ng-readonly="field.filters.ReadOnly" ng-model="model.name" ng-show="field.filters.ReadOnly">
+</div>

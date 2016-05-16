@@ -1,0 +1,21 @@
+<div class="input-group" style="width:100%">
+		<input 
+			type="text"
+			id="{{field.id}}"
+			name="{{field.name}}"
+			class="form-control " 
+			ng-model="dateVal" 
+			datepicker-popup="{{format}}"
+			ng-change="onChange()"
+			max="maxDate"
+      max-date="maxDate"
+			is-open="dateObject.opened"
+			readonly 
+			> 
+		<span class="input-group-btn">
+			<button type="button" role="button" class="btn btn-default" ng-click="open($event)">
+				<i class="glyphicon glyphicon-calendar"></i>
+				<span class="sr-only" translate="SR_OPEN_CALENDAR_WIDGET"></span>
+			</button>
+		</span>
+</div>

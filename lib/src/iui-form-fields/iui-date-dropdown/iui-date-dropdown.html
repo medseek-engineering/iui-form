@@ -1,0 +1,54 @@
+<ng-form name="dateDropdown">
+	<div class="input-group-date-dropdown">
+		<div class="input-group-date-dropdown-month">
+			<label><span class="sr-only">{{field.label}}: Month</span><select
+					name="month"
+					class="form-control"
+					ng-model="month"
+					ng-options="months.indexOf(month) as month for month in months"
+					ng-change="onChange()"
+					ng-required="field.filters.Required"
+					ng-disabled="field.filters.ReadOnly">
+					<option value="">{{'SR_MONTH' | translate}}</option>
+				</select></label>
+		</div>
+		<div class="input-group-date-dropdown-day">
+			<label><span class="sr-only">{{field.label}}: Day</span><select
+					name="day"
+					class="form-control"
+					ng-model="day"
+					ng-options="(day < 10) ? '0' + (day) : (day) for day in days"
+					ng-change="onChange()"
+					ng-required="field.filters.Required"
+					ng-disabled="field.filters.ReadOnly">
+					<option value="">{{'SR_DAY' | translate}}</option>
+				</select></label>
+		</div>
+		<div class="input-group-date-dropdown-year">
+			<label><span class="sr-only">{{field.label}}: Year</span><select
+					name="year"
+					class="form-control"
+					ng-model="year"
+					ng-options="year for year in years"
+					ng-required="field.filters.Required"
+					ng-change="onChange()"
+					ng-disabled="field.filters.ReadOnly">
+					<option value="">{{'SR_YEAR' | translate}}</option>
+				</select></label>
+		</div>
+	</div>
+	<ul class="df_field_helpblock"
+		ng-show="field.state().$dirty">
+		<li ng-show="(dateDropdown.month.$dirty &&
+		  dateDropdown.day.$dirty &&
+		  dateDropdown.year.$dirty) &&
+		  (dateDropdown.month.$error.required ||
+		  dateDropdown.day.$error.required ||
+		  dateDropdown.year.$error.required)" translate="FIELD_REQD"></li>
+		<li
+			ng-if="key !== 'required'"
+			ng-repeat="(key, value) in field.state().$error"
+			ng-show="value"
+			ng-bind="key | errorMessage:value:form:field"></li>
+	</ul>
+</ng-form>

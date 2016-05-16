@@ -1,0 +1,28 @@
+<div>
+<div class="df_autoComplete" ng-class="{'input-group': itemSelected&&innerModel.length&&!field.filters.ReadOnly}">
+	<input type="text"
+		id="{{field | field_id}}"
+		name="{{field.name}}"
+		ng-model="innerModel"
+		ng-readonly="field.filters.ReadOnly"
+		ng-required="field.filters.Required"
+		typeahead="item as item.value for item in query($viewValue) | filter:{value:$viewValue}"
+		class="form-control"
+		typeahead-template-url="typeaheadTemplate.html"
+		typeahead-wait-ms="timedelay || 100"
+		autocomplete="off"
+		typeahead-on-select='onSelect($item, $model, $label)'>
+		<span class="input-group-btn input-group-addon-no-background" ng-show="itemSelected&&innerModel.length&&!field.filters.ReadOnly">
+			<button class="btn btn-default" ng-click="clear()">
+				<i class="glyphicon glyphicon-remove white"></i>
+				<span class="sr-only">Clear {{field.label}}</span>
+			</button>
+		</span>
+</div>
+
+<script type="text/ng-template" id="typeaheadTemplate.html">
+	<a href="" role="button" ng-click="selectMatch($index)">
+		<span>{{match.model.value}}</span>
+	</a>
+</script>
+</div>

@@ -1,0 +1,18 @@
+<ul class="mf-radio-list" role="radiogroup" aria-describedby="{{field.id}}">
+	<li ng-repeat="(key, value)  in field.listItems"
+		data-style="button"
+		role="presentation">
+		<div class="custom-radio" role="presentation">
+			<input
+				id="{{field.name + '_radioList_radio' + $index}}"
+				name="{{field.name}}"
+				type="radio"
+				ng-model="$parent.selected"
+				role="radio"
+				value="{{key}}"
+				aria-label="{{field.label + ' ' + value}}"
+			>
+			<label for="{{field.name + '_radioList_radio' + $index}}" class="label-soft">{{value}}</label>
+		</div>
+	</li>
+</ul>

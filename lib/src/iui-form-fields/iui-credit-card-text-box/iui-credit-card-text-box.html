@@ -1,0 +1,16 @@
+<div class="creditCardTextBox">
+	<fieldset class="form-group">
+		<legend class="sr-only" translate="SELECT_CARD_TYPE"></legend>
+		<div class="cc_radios" >
+			<div class="custom-radio" ng-repeat="type in types">
+			  <input name="cardType" ng-model="$parent.cardType" ng-value="type" type="radio" id="creditCard_{{type.name}}">
+			  <label for="creditCard_{{type.name}}">
+			    {{type.name}}
+			  </label>
+			</div>
+		</div>
+	</fieldset>
+	<label for="{{field.id}}_credit_card" class="control-label" ng-class="{'required-field':field.filters.Required}" ng-bind="field.label"></label>
+	<input type="text" id="{{field.id}}_credit_card" name="{{field.name}}" class="targetControl form-control" ng-required="field.filters.Required" ng-model="model" maxlength="16">
+
+</div>

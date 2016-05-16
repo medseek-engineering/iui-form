@@ -9,6 +9,11 @@
   function TestController() {
     var vm = this;
     vm.name = 'World!';
+    vm.checkbox = true;
+    vm.checkboxField = {
+      name: 'asdsad',
+      label: 'asdasd'
+    };
   }
 
 })();

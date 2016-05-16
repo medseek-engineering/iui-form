@@ -20,7 +20,16 @@
         ng-model="test.checkbox"
         field="test.checkboxField">
       </iui-check-box>
+      <pre>{{test.checkbox | json}}</pre>
       
+      <h3>iui-check-box-list</h3>
+      <iui-check-box-list 
+        ng-model="test.checkboxlist"
+        field="test.checkboxListFields">
+      </iui-check-box-list>
+      <pre>{{test.checkboxlist | json}}</pre>
+      
+      <!--
       <h3>iui-auto-complete</h3>
       <iui-auto-complete 
         ng-model="test.checkbox"
@@ -32,12 +41,6 @@
         ng-model="test.checkbox"
         field="test.checkboxField">
       </iui-date-dropdown>
-      
-      <h3>iui-check-box-list</h3>
-      <iui-check-box-list 
-        ng-model="test.checkbox"
-        field="test.checkboxField">
-      </iui-check-box-list>
       
       <h3>iui-credit-card-text-box</h3>
       <iui-credit-card-text-box 
@@ -111,7 +114,6 @@
         field="test.checkboxField">
       </iui-zip-text-box>
       
-      <!-- Max Length Test -->
       <h3>iui-max-length</h3>
       <iui-text-box 
         ng-model="test.checkbox"
@@ -119,7 +121,6 @@
         iui-max-length="">
       </iui-text-box>
       
-      <!-- Retype Test -->
       <h3>iui-retype</h3>
       <iui-text-box 
         ng-model="test.checkbox"
@@ -127,13 +128,13 @@
         iui-retype="">
       </iui-text-box>
       
-      <!-- text Allow Degitis Test -->
       <h3>iui-text-allow-digits</h3>
       <iui-text-box 
         ng-model="test.checkbox"
         field="test.checkboxField"
         iui-text-allow-digits="">
       </iui-text-box>
+      -->
     
     </main>
 

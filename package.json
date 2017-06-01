@@ -1,6 +1,6 @@
 {
   "name": "iui-form",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular form Fields and other helper directives.",
   "main": "./lib/index.js",
   "private": false,
